@@ -37,5 +37,5 @@ class Window(QMainWindow):
 
 app = QApplication([])
 fenster = Window()
-fenster.raise_()
+#fenster.raise_()
 app.exec()
