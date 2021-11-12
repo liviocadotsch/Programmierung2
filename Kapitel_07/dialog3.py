@@ -2,6 +2,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
+style = """* {font-size: 48px;}
+                    QPushButton { font-size: 48px; background-color: #00AA00; }
+                   QPushButton:pressed {font-size: 48px; background-color: #AA0000}"""
+
 class Dialog(QDialog):
     def __init__(self, parent):
         super().__init__(parent)
@@ -12,10 +16,12 @@ class Dialog(QDialog):
         layout.addWidget(label)
         layout.addWidget(button)
         self.setLayout(layout)
+        self.setStyleSheet(style)
         button.clicked.connect(self.button_clicked)
 
     def button_clicked(self):
         self.close()
+#---------------------------------------------------------------------------------------
 
 class Fenster(QMainWindow):
     def __init__(self):
@@ -39,28 +45,16 @@ class Fenster(QMainWindow):
         buttons.append(QPushButton("QFontDialog"))
         buttons.append(QPushButton("Custom Dialog"))
 
-
-        buttons[0].clicked.connect(self.button1_clicked)
-        buttons[1].clicked.connect(self.button2_clicked)
-        buttons[2].clicked.connect(self.button3_clicked)
-        buttons[3].clicked.connect(self.button4_clicked)
-        buttons[4].clicked.connect(self.button5_clicked)
-        buttons[5].clicked.connect(self.button6_clicked)
-        buttons[6].clicked.connect(self.button7_clicked)
-        buttons[7].clicked.connect(self.button8_clicked)
-        buttons[8].clicked.connect(self.button9_clicked)
-        buttons[9].clicked.connect(self.button10_clicked)
-        buttons[10].clicked.connect(self.button11_clicked)
-        buttons[11].clicked.connect(self.button12_clicked)
-
-        style = """QPushButton { font-size: 48px; background-color: #00AA00; }
-                   QPushButton:pressed {font-size: 48px; background-color: #AA0000}"""
+        # Mit getattr kann die Mathode in der Klasse direkt gesucht werden (Advanced)
+        # Man könnte sich auch die untere for-Schleife sparen und alles in eine for-Schleife packen
+        for i in range(0,len(buttons)):
+            function = getattr(self,f"button{i+1}_clicked")
+            buttons[i].clicked.connect(function)
 
         for button in buttons:
             button.setStyleSheet(style)
             layout.addWidget(button)
        
-
         center = QWidget()
         center.setLayout(layout)
 
