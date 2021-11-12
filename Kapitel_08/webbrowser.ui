@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1308</width>
-    <height>1088</height>
+    <width>496</width>
+    <height>472</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,6 +27,51 @@
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Koordinaten:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="lineEdit1">
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>37,4015111111</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>°</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>-116,867802778</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>°</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
        <widget class="QPushButton" name="pushButton">
         <property name="font">
          <font>
@@ -34,7 +79,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Lade Webseite</string>
+         <string>Standort Anzeigen</string>
         </property>
        </widget>
       </item>
@@ -47,8 +92,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1308</width>
-     <height>38</height>
+     <width>496</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>

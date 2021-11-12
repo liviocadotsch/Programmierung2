@@ -6,7 +6,7 @@ from PyQt5.uic import *
 class Browser(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("Kapitel_08/webbrowser.ui", self)
+        loadUi("Unterrichtsnotizen Christen/Kapitel_08/webbrowser.ui", self)
 
         defaultProfile = QWebEngineProfile.defaultProfile()
         defaultProfile.setPersistentCookiesPolicy(QWebEngineProfile.ForcePersistentCookies)
